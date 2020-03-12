@@ -1,0 +1,71 @@
+INDIVIDUO
+
+Esta clase representa un individuo con unas características inicial definida
+    por una combinación de valores numéricos aleatorios. El rango de posibles
+    valores para cada variable puede estar acotado.
+    
+    
+    Parameters
+    ----------
+    n_variables : `int`
+        número de variables que definen al individuo.
+        
+    limites_inf : `list` or `numpy.ndarray`, optional
+        límite inferior de cada variable. Si solo se quiere predefinir límites
+        de alguna variable, emplear ``None``. Los ``None`` serán remplazados
+        por el valor (-10**3). (default ``None``)
+        
+    limites_sup : `list` or `numpy.ndarray`, optional
+        límite superior de cada variable. Si solo se quiere predefinir límites
+        de alguna variable, emplear ``None``. Los ``None`` serán remplazados
+        por el valor (+10**3). (default ``None``)
+
+    verbose : `bool`, optional
+        mostrar información del individuo creado. (default ``False``)
+
+    Attributes
+    ----------
+    n_variables : `int`
+        número de variables que definen al individuo.
+
+    limites_inf : `list` or `numpy.ndarray`
+        límite inferior de cada variable. Si solo se quiere predefinir límites
+        de alguna variable, emplear ``None``. Los ``None`` serán remplazados por
+        el valor (-10**3).
+
+    limites_sup : `list` or `numpy.ndarray`
+        límite superior de cada variable. Si solo se quiere predefinir límites
+        de alguna variable, emplear ``None``. Los``None`` serán remplazados por
+        el valor (+10**3).
+
+    valor_variables : `numpy.ndarray`
+        array con el valor de cada una de las variables.
+
+    fitness : `float`
+        valor de fitness del individuo.
+
+    valor_funcion : `float`
+        valor de la función objetivo para el individuo.
+
+    Raises
+    ------
+    raise Exception
+        si `limites_inf` es distinto de None y su longitud no coincide con
+        `n_variables`.
+
+    raise Exception
+        si `limites_sup` es distinto de None y su longitud no coincide con
+        `n_variables`.
+
+    Examples
+    --------
+    Ejemplo creación individuo.
+
+    >>> individuo = Individuo(
+                        n_variables = 3,
+                        limites_inf = [-1,2,0],
+                        limites_sup = [4,10,20],
+                        verbose     = True
+                    )
+
+    """
